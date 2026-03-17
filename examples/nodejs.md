@@ -1,6 +1,6 @@
 # Node.js Integration Example
 
-A ready-to-use Node.js client for the [NLnest](https://nlnest.com) Employer API. Uses the built-in `fetch` API (Node.js 18+) and the `crypto` module — no external dependencies required.
+A ready-to-use Node.js client for the [NLnest](https://nlnest.com) Employer API. Uses the built-in `fetch` API (Node.js 18+) and the `crypto` module - no external dependencies required.
 
 For Node.js 16 or earlier, replace `fetch` with the `node-fetch` package (`npm install node-fetch`).
 
@@ -10,10 +10,10 @@ For Node.js 16 or earlier, replace `fetch` with the `node-fetch` package (`npm i
 
 ```javascript
 /**
- * NLnest Employer API Client — Node.js
+ * NLnest Employer API Client - Node.js
  * https://nlnest.com
  *
- * Uses built-in fetch (Node.js 18+) and crypto — zero dependencies.
+ * Uses built-in fetch (Node.js 18+) and crypto - zero dependencies.
  *
  * Usage:
  *   import { NLnestClient } from './nlnest.js';
@@ -59,7 +59,7 @@ export class NLnestClient {
   /**
    * Create a new job listing.
    *
-   * @param {object} data  Job fields — see docs/jobs.md for the full reference
+   * @param {object} data  Job fields - see docs/jobs.md for the full reference
    * @returns {Promise<object>}
    *
    * @example
@@ -102,7 +102,7 @@ export class NLnestClient {
   }
 
   /**
-   * Partially update a job — send only the fields you want to change.
+   * Partially update a job - send only the fields you want to change.
    *
    * @param {number} jobId
    * @param {object} data
@@ -191,9 +191,9 @@ export class NLnestClient {
    * Create a new webhook subscription.
    *
    * @param {string}   url         Your HTTPS endpoint
-   * @param {string[]} events      Event names — use ['*'] for all events
+   * @param {string[]} events      Event names - use ['*'] for all events
    * @param {string}   [description]
-   * @returns {Promise<object>}    Includes 'secret' — store it securely, shown only once!
+   * @returns {Promise<object>}    Includes 'secret' - store it securely, shown only once!
    */
   async createWebhook(url, events, description = '') {
     return this.#request('POST', '/webhooks', { url, events, description });
@@ -403,7 +403,7 @@ try {
 // --- List active jobs ---
 const { data: jobs } = await client.listJobs({ status: 'active' });
 for (const job of jobs) {
-  console.log(`[${job.id}] ${job.title_en} — ${job.applications_count} applications`);
+  console.log(`[${job.id}] ${job.title_en} - ${job.applications_count} applications`);
 }
 
 // --- Update application statuses ---
@@ -435,12 +435,12 @@ import { NLnestClient } from './nlnest.js';
 const app    = express();
 const SECRET = process.env.NLNEST_WEBHOOK_SECRET;
 
-// IMPORTANT: use express.raw() — not express.json() — to get the raw body for signature verification
+// IMPORTANT: use express.raw() - not express.json() - to get the raw body for signature verification
 app.post('/webhooks/nlnest', express.raw({ type: '*/*' }), (req, res) => {
   const signature = req.headers['x-webhook-signature'] ?? '';
 
   if (!NLnestClient.verifyWebhookSignature(req.body, signature, SECRET)) {
-    console.warn('Invalid webhook signature — rejected.');
+    console.warn('Invalid webhook signature - rejected.');
     return res.status(401).json({ error: 'Invalid signature' });
   }
 

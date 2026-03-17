@@ -37,16 +37,16 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 | `403` | `forbidden` | The API key exists but does not have permission to access this resource (e.g. another company's data) |
 | `404` | `not_found` | The requested resource does not exist |
 | `405` | `method_not_allowed` | HTTP method is not supported on this endpoint |
-| `422` | `validation_error` | Request body failed validation — check `details` for field-level messages |
+| `422` | `validation_error` | Request body failed validation - check `details` for field-level messages |
 | `422` | `invalid_city` | `city_name` was provided but did not match any Dutch city in the platform database |
-| `429` | `rate_limit_exceeded` | You have exceeded your daily API quota — see [rate-limiting.md](rate-limiting.md) |
-| `500` | `server_error` | Unexpected server-side error — please retry and contact support if persistent |
+| `429` | `rate_limit_exceeded` | You have exceeded your daily API quota - see [rate-limiting.md](rate-limiting.md) |
+| `500` | `server_error` | Unexpected server-side error - please retry and contact support if persistent |
 
 ---
 
 ## Detailed Examples
 
-### 401 — Unauthorized
+### 401 - Unauthorized
 
 ```json
 {
@@ -63,7 +63,7 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 - Key copied with extra whitespace
 - Key was regenerated and the old value is still in use
 
-### 403 — Forbidden
+### 403 - Forbidden
 
 ```json
 {
@@ -79,7 +79,7 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 - Attempting to read or modify a job or application belonging to a different company
 - Attempting to access an admin-only endpoint
 
-### 404 — Not Found
+### 404 - Not Found
 
 ```json
 {
@@ -91,7 +91,7 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 }
 ```
 
-### 422 — Validation Error
+### 422 - Validation Error
 
 ```json
 {
@@ -108,7 +108,7 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 }
 ```
 
-### 422 — Invalid City
+### 422 - Invalid City
 
 ```json
 {
@@ -125,7 +125,7 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 
 **Tip:** City matching is flexible (case-insensitive, accent-tolerant) but requires recognisable Dutch city names. Use the full official name (e.g. `"'s-Hertogenbosch"` not `"Den Bosch"`).
 
-### 429 — Rate Limit Exceeded
+### 429 - Rate Limit Exceeded
 
 ```json
 {
@@ -144,7 +144,7 @@ The NLnest API uses standard HTTP status codes and returns a consistent JSON err
 
 See [rate-limiting.md](rate-limiting.md) for details on quota headers and limits.
 
-### 500 — Server Error
+### 500 - Server Error
 
 ```json
 {

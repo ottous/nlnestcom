@@ -1,6 +1,6 @@
 # Jobs
 
-Manage job listings programmatically. Create multilingual postings, update details, and close positions — all without touching the [NLnest](https://nlnest.com) dashboard.
+Manage job listings programmatically. Create multilingual postings, update details, and close positions - all without touching the [NLnest](https://nlnest.com) dashboard.
 
 ---
 
@@ -16,7 +16,7 @@ Manage job listings programmatically. Create multilingual postings, update detai
 
 ---
 
-## POST /api/v1/jobs — Create Job
+## POST /api/v1/jobs - Create Job
 
 Creates a new job listing. The job will be published automatically if your company account has auto-publish enabled, or saved as a `draft` for manual review. **Test keys always create drafts.**
 
@@ -149,7 +149,7 @@ curl -X POST https://nlnest.com/api/v1/jobs \
 
 ---
 
-## GET /api/v1/jobs — List Jobs
+## GET /api/v1/jobs - List Jobs
 
 Returns a paginated list of all jobs belonging to your company.
 
@@ -159,8 +159,8 @@ Returns a paginated list of all jobs belonging to your company.
 |-----------|------|---------|-------------|
 | `page` | integer | `1` | Page number |
 | `per_page` | integer | `20` | Results per page (max `100`) |
-| `status` | string | — | Filter by status: `active`, `draft`, `closed`, `expired` |
-| `sector_id` | integer | — | Filter by sector |
+| `status` | string | - | Filter by status: `active`, `draft`, `closed`, `expired` |
+| `sector_id` | integer | - | Filter by sector |
 
 ### Example Request
 
@@ -198,7 +198,7 @@ curl "https://nlnest.com/api/v1/jobs?status=active&page=1&per_page=20" \
 
 ---
 
-## GET /api/v1/jobs/{id} — Get Job
+## GET /api/v1/jobs/{id} - Get Job
 
 Returns full details for a single job, including all available translations.
 
@@ -248,11 +248,11 @@ curl https://nlnest.com/api/v1/jobs/18472 \
 
 ---
 
-## PATCH /api/v1/jobs/{id} — Update Job
+## PATCH /api/v1/jobs/{id} - Update Job
 
-Partially update a job. Send only the fields you want to change — all other fields remain unchanged.
+Partially update a job. Send only the fields you want to change - all other fields remain unchanged.
 
-### Example Request — Update Salary
+### Example Request - Update Salary
 
 ```bash
 curl -X PATCH https://nlnest.com/api/v1/jobs/18472 \
@@ -280,9 +280,9 @@ curl -X PATCH https://nlnest.com/api/v1/jobs/18472 \
 
 ---
 
-## DELETE /api/v1/jobs/{id} — Close Job
+## DELETE /api/v1/jobs/{id} - Close Job
 
-Closes a job listing. This is a soft delete — the record is preserved for analytics and application history. Closed jobs no longer appear in public search results.
+Closes a job listing. This is a soft delete - the record is preserved for analytics and application history. Closed jobs no longer appear in public search results.
 
 ### Example Request
 

@@ -13,17 +13,17 @@ This repository contains the official documentation for the **NLnest Employer AP
 
 [NLnest](https://nlnest.com) gives employers and candidates everything they need for a successful cross-border hire:
 
-- **11 languages supported** — English, Romanian, Dutch, Hungarian, Polish, Spanish, Portuguese, Lithuanian, Bulgarian, Greek, and Ukrainian
-- **Smart job matching** — algorithmic scoring based on skills, location, experience, and language preferences
-- **Auto-translation** — post a job in English and NLnest automatically translates it to all 11 languages
+- **11 languages supported** - English, Romanian, Dutch, Hungarian, Polish, Spanish, Portuguese, Lithuanian, Bulgarian, Greek, and Ukrainian
+- **Smart job matching** - algorithmic scoring based on skills, location, experience, and language preferences
+- **Auto-translation** - post a job in English and NLnest automatically translates it to all 11 languages
 - **Relocation tools** for candidates:
-  - [Salary Calculator](https://nlnest.com/en/salary-calculator) — gross-to-net salary breakdown for the Netherlands
-  - [Cost of Living Calculator](https://nlnest.com/en/cost-of-living) — compare living costs across Dutch cities
-  - [Relocation Quiz & Checklist](https://nlnest.com/en/relocation-quiz) — personalised relocation roadmap
-- **Job alerts** — candidates subscribe to alerts; matched jobs are delivered by email
-- **Company profiles** — public employer pages with branding, open positions, and reviews
-- **Candidate CRM** — full pipeline management: Kanban board, interviews, scorecards, offers, onboarding
-- **Analytics** — views, applications, conversion rates, time-to-hire
+  - [Salary Calculator](https://nlnest.com/en/salary-calculator) - gross-to-net salary breakdown for the Netherlands
+  - [Cost of Living Calculator](https://nlnest.com/en/cost-of-living) - compare living costs across Dutch cities
+  - [Relocation Quiz & Checklist](https://nlnest.com/en/relocation-quiz) - personalised relocation roadmap
+- **Job alerts** - candidates subscribe to alerts; matched jobs are delivered by email
+- **Company profiles** - public employer pages with branding, open positions, and reviews
+- **Candidate CRM** - full pipeline management: Kanban board, interviews, scorecards, offers, onboarding
+- **Analytics** - views, applications, conversion rates, time-to-hire
 
 ---
 
@@ -31,11 +31,11 @@ This repository contains the official documentation for the **NLnest Employer AP
 
 The NLnest Employer API lets you integrate your ATS, HRIS, or internal tooling directly with the platform. With the API you can:
 
-- **Publish and manage jobs** — create, update, close, and query job listings programmatically
-- **Read applications** — pull candidate details, CV files, and screening answers into your own systems
-- **Update pipeline status** — move candidates through stages (shortlisted, interview, hired, rejected, etc.)
-- **Receive webhook events** — get real-time push notifications when applications arrive or statuses change
-- **Query analytics** — retrieve job performance data, conversion rates, and hiring KPIs
+- **Publish and manage jobs** - create, update, close, and query job listings programmatically
+- **Read applications** - pull candidate details, CV files, and screening answers into your own systems
+- **Update pipeline status** - move candidates through stages (shortlisted, interview, hired, rejected, etc.)
+- **Receive webhook events** - get real-time push notifications when applications arrive or statuses change
+- **Query analytics** - retrieve job performance data, conversion rates, and hiring KPIs
 
 All responses are JSON. The API base URL is `https://nlnest.com/api/v1/`.
 
@@ -126,4 +126,4 @@ That's it. With `auto_translate: true`, NLnest will automatically produce transl
 
 MIT License. See [LICENSE](LICENSE) for details.
 
-Documentation and examples are provided as-is for integration purposes. The NLnest platform and API are proprietary — see [nlnest.com](https://nlnest.com) for terms of service.
+Documentation and examples are provided as-is for integration purposes. The NLnest platform and API are proprietary - see [nlnest.com](https://nlnest.com) for terms of service.

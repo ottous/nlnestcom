@@ -8,7 +8,7 @@ A ready-to-use Python client for the [NLnest](https://nlnest.com) Employer API. 
 
 ```python
 """
-NLnest Employer API Client — Python
+NLnest Employer API Client - Python
 https://nlnest.com
 
 A clean requests-based wrapper for the NLnest API v1.
@@ -237,7 +237,7 @@ class NLnestClient:
             description: Optional human-readable label
 
         Returns:
-            Response including 'secret' — store it securely, shown only once!
+            Response including 'secret' - store it securely, shown only once!
         """
         return self._request("POST", "webhooks", json={
             "url": url,
@@ -401,7 +401,7 @@ except NLnestAPIError as e:
 # --- List active jobs ---
 result = client.list_jobs(status="active", per_page=50)
 for j in result["data"]:
-    print(f"[{j['id']}] {j['title_en']} — {j['applications_count']} applications")
+    print(f"[{j['id']}] {j['title_en']} - {j['applications_count']} applications")
 
 # --- Process new applications ---
 apps = client.list_applications(job_id=job["data"]["id"], status="new")

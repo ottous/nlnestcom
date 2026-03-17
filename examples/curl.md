@@ -17,7 +17,7 @@ export NLNEST_API="https://nlnest.com/api/v1"
 ## Authentication Test
 
 ```bash
-# Verify your key works — expect 200 with a list of your jobs
+# Verify your key works - expect 200 with a list of your jobs
 curl "$NLNEST_API/jobs" \
   -H "X-API-Key: $NLNEST_KEY"
 ```

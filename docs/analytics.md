@@ -13,7 +13,7 @@ Query job performance data and company-wide hiring metrics from [NLnest](https:/
 
 ---
 
-## GET /api/v1/analytics/jobs/{id} — Job Analytics
+## GET /api/v1/analytics/jobs/{id} - Job Analytics
 
 Returns view counts, application volume, and conversion rate for a specific job listing.
 
@@ -21,8 +21,8 @@ Returns view counts, application volume, and conversion rate for a specific job 
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `date_from` | string | 30 days ago | ISO 8601 date (e.g. `2026-01-01`) — start of reporting window |
-| `date_to` | string | today | ISO 8601 date — end of reporting window |
+| `date_from` | string | 30 days ago | ISO 8601 date (e.g. `2026-01-01`) - start of reporting window |
+| `date_to` | string | today | ISO 8601 date - end of reporting window |
 
 ### Example Request
 
@@ -96,7 +96,7 @@ curl "https://nlnest.com/api/v1/analytics/jobs/18472?date_from=2026-03-01&date_t
 
 ---
 
-## GET /api/v1/analytics/overview — Company Overview
+## GET /api/v1/analytics/overview - Company Overview
 
 Returns aggregated hiring metrics across your entire company account.
 
@@ -190,7 +190,7 @@ curl "https://nlnest.com/api/v1/analytics/overview?date_from=2026-01-01&date_to=
 
 - Analytics data is updated every **15 minutes**.
 - The `date_from` / `date_to` range is inclusive on both ends.
-- `avg_time_to_hire_days` only counts applications that reached `hired` status — it excludes ongoing pipelines.
+- `avg_time_to_hire_days` only counts applications that reached `hired` status - it excludes ongoing pipelines.
 - Maximum date range for a single request is **365 days**.
 
 ---

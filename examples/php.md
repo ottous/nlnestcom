@@ -190,7 +190,7 @@ class NLnestAPI
      * @param  string $url     Your HTTPS endpoint
      * @param  array  $events  Event names, e.g. ['application.created'] or ['*']
      * @param  string $description  Optional label
-     * @return array           Includes 'secret' — store it securely, shown only once
+     * @return array           Includes 'secret' - store it securely, shown only once
      */
     public function createWebhook(string $url, array $events, string $description = ''): array
     {
@@ -388,7 +388,7 @@ echo "Job created: " . $job['data']['id'] . " → " . $job['data']['url'] . PHP_
 // --- List active jobs ---
 $result = $api->listJobs(['status' => 'active']);
 foreach ($result['data'] as $j) {
-    echo "[{$j['id']}] {$j['title_en']} — {$j['applications_count']} applications" . PHP_EOL;
+    echo "[{$j['id']}] {$j['title_en']} - {$j['applications_count']} applications" . PHP_EOL;
 }
 
 // --- Process new applications ---

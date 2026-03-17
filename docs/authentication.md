@@ -9,7 +9,7 @@ All requests to the NLnest Employer API must include a valid API key. Keys are t
 1. Log in to your company account at [nlnest.com](https://nlnest.com)
 2. Navigate to **Dashboard → Settings → API**
 3. Click **Generate New Key**
-4. Copy the key immediately — it is shown only once
+4. Copy the key immediately - it is shown only once
 
 ---
 
@@ -30,7 +30,7 @@ Use test keys during development and CI/CD pipelines. Switch to a production key
 https://nlnest.com/api/v1/
 ```
 
-All endpoints in this documentation are relative to this base URL. Always use HTTPS — HTTP requests will be rejected.
+All endpoints in this documentation are relative to this base URL. Always use HTTPS - HTTP requests will be rejected.
 
 ---
 
@@ -42,7 +42,7 @@ Pass your key in the `X-API-Key` request header:
 X-API-Key: nlnest_live_your_key_here
 ```
 
-### Example — Verify Authentication
+### Example - Verify Authentication
 
 ```bash
 curl https://nlnest.com/api/v1/jobs \
@@ -67,8 +67,8 @@ A successful response returns HTTP `200` with a JSON body. An invalid or missing
 
 - **Never expose keys in client-side code** (JavaScript bundles, mobile apps). The API is designed for server-to-server use.
 - **Store keys in environment variables**, not in source code or configuration files committed to version control.
-- **Rotate keys regularly** — you can regenerate a key from the dashboard at any time. The old key is immediately invalidated.
-- **Use one key per integration** — create separate keys for different environments (staging vs. production) or different services.
+- **Rotate keys regularly** - you can regenerate a key from the dashboard at any time. The old key is immediately invalidated.
+- **Use one key per integration** - create separate keys for different environments (staging vs. production) or different services.
 
 ---
 

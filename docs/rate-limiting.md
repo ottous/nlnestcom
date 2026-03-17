@@ -115,5 +115,5 @@ Each HTTP request to any `/api/v1/` endpoint counts as **one request** against y
 ## See Also
 
 - [Authentication →](authentication.md)
-- [Errors — 429 rate_limit_exceeded →](errors.md)
+- [Errors - 429 rate_limit_exceeded →](errors.md)
 - [Webhooks (no quota cost) →](webhooks.md)

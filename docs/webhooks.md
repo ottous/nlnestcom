@@ -15,7 +15,7 @@ Receive real-time push notifications when events happen in your [NLnest](https:/
 
 ---
 
-## POST /api/v1/webhooks — Create Webhook
+## POST /api/v1/webhooks - Create Webhook
 
 ### Request Body
 
@@ -34,7 +34,7 @@ Receive real-time push notifications when events happen in your [NLnest](https:/
 | `job.expired` | A job listing reaches its `expires_at` date and is automatically closed |
 | `job.approved` | A pending job is approved by the platform and goes live |
 | `message.received` | A candidate sends you a message via the platform messaging system |
-| `*` | All events (wildcard — subscribe to everything) |
+| `*` | All events (wildcard - subscribe to everything) |
 
 ### Example Request
 
@@ -45,7 +45,7 @@ curl -X POST https://nlnest.com/api/v1/webhooks \
   -d '{
     "url": "https://your-ats.example.com/nlnest/webhook",
     "events": ["application.created", "application.status_changed"],
-    "description": "ATS sync — new applications and status changes"
+    "description": "ATS sync - new applications and status changes"
   }'
 ```
 
@@ -58,7 +58,7 @@ curl -X POST https://nlnest.com/api/v1/webhooks \
     "id": 55,
     "url": "https://your-ats.example.com/nlnest/webhook",
     "events": ["application.created", "application.status_changed"],
-    "description": "ATS sync — new applications and status changes",
+    "description": "ATS sync - new applications and status changes",
     "status": "active",
     "secret": "whsec_a3f8b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1",
     "created_at": "2026-03-13T10:00:00Z"
@@ -66,11 +66,11 @@ curl -X POST https://nlnest.com/api/v1/webhooks \
 }
 ```
 
-> **Important**: The `secret` is shown **only once** at creation time. Store it securely — you will need it to verify incoming webhook signatures. It cannot be retrieved again.
+> **Important**: The `secret` is shown **only once** at creation time. Store it securely - you will need it to verify incoming webhook signatures. It cannot be retrieved again.
 
 ---
 
-## GET /api/v1/webhooks — List Webhooks
+## GET /api/v1/webhooks - List Webhooks
 
 ```bash
 curl https://nlnest.com/api/v1/webhooks \
@@ -94,11 +94,11 @@ curl https://nlnest.com/api/v1/webhooks \
 }
 ```
 
-The `secret` is never returned in list or get responses — only at creation.
+The `secret` is never returned in list or get responses - only at creation.
 
 ---
 
-## PATCH /api/v1/webhooks/{id} — Update Webhook
+## PATCH /api/v1/webhooks/{id} - Update Webhook
 
 Update the URL, event subscriptions, or enable/disable the webhook.
 
@@ -114,7 +114,7 @@ curl -X PATCH https://nlnest.com/api/v1/webhooks/55 \
 
 ---
 
-## DELETE /api/v1/webhooks/{id} — Delete Webhook
+## DELETE /api/v1/webhooks/{id} - Delete Webhook
 
 ```bash
 curl -X DELETE https://nlnest.com/api/v1/webhooks/55 \
@@ -146,7 +146,7 @@ NLnest sends an HTTP `POST` to your endpoint with:
 
 Your endpoint must return HTTP `2xx` within **10 seconds**. Any non-2xx response or timeout is treated as a failure.
 
-### Example Payload — application.created
+### Example Payload - application.created
 
 ```json
 {
@@ -176,7 +176,7 @@ Your endpoint must return HTTP `2xx` within **10 seconds**. Any non-2xx response
 }
 ```
 
-### Example Payload — application.status_changed
+### Example Payload - application.status_changed
 
 ```json
 {
@@ -210,7 +210,7 @@ Every webhook request includes an `X-Webhook-Signature` header containing an HMA
 
 **Always verify the signature** before processing the payload to ensure the request is genuinely from NLnest.
 
-### Verification — PHP
+### Verification - PHP
 
 ```php
 function verify_nlnest_webhook(string $payload, string $signature_header, string $secret): bool {
@@ -231,7 +231,7 @@ $event = json_decode($payload, true);
 // process $event...
 ```
 
-### Verification — Python
+### Verification - Python
 
 ```python
 import hmac
@@ -244,7 +244,7 @@ def verify_nlnest_webhook(payload: bytes, signature_header: str, secret: str) ->
     return hmac.compare_digest(expected, signature_header)
 ```
 
-### Verification — Node.js
+### Verification - Node.js
 
 ```javascript
 const crypto = require('crypto');
@@ -282,7 +282,7 @@ After 3 consecutive failures for a single delivery, the event is dropped.
 ## Best Practices
 
 - Respond with `200 OK` immediately and process the payload asynchronously (e.g. push to a queue). This prevents timeouts.
-- Use the `X-NLnest-Delivery` UUID for idempotency — your endpoint may receive duplicate deliveries during retries.
+- Use the `X-NLnest-Delivery` UUID for idempotency - your endpoint may receive duplicate deliveries during retries.
 - Check the `timestamp` field to detect and discard replayed or delayed events.
 - Store the webhook secret in an environment variable, never in source code.
 

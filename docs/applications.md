@@ -15,7 +15,7 @@ Read and manage candidate applications submitted to your job listings on [NLnest
 
 ---
 
-## GET /api/v1/applications — List Applications
+## GET /api/v1/applications - List Applications
 
 Returns a paginated list of applications across all your company's jobs, or filtered by job.
 
@@ -25,10 +25,10 @@ Returns a paginated list of applications across all your company's jobs, or filt
 |-----------|------|---------|-------------|
 | `page` | integer | `1` | Page number |
 | `per_page` | integer | `20` | Results per page (max `100`) |
-| `job_id` | integer | — | Filter by specific job ID |
-| `status` | string | — | Filter by pipeline status (see status reference below) |
-| `date_from` | string | — | ISO 8601 date — only return applications submitted on or after this date |
-| `date_to` | string | — | ISO 8601 date — only return applications submitted on or before this date |
+| `job_id` | integer | - | Filter by specific job ID |
+| `status` | string | - | Filter by pipeline status (see status reference below) |
+| `date_from` | string | - | ISO 8601 date - only return applications submitted on or after this date |
+| `date_to` | string | - | ISO 8601 date - only return applications submitted on or before this date |
 
 ### Example Request
 
@@ -76,7 +76,7 @@ curl "https://nlnest.com/api/v1/applications?job_id=18472&status=shortlisted" \
 
 ---
 
-## GET /api/v1/applications/{id} — Get Application
+## GET /api/v1/applications/{id} - Get Application
 
 Returns full details for a single application, including candidate profile, cover letter, screening answers, and CV availability.
 
@@ -146,7 +146,7 @@ curl https://nlnest.com/api/v1/applications/9341 \
 
 ---
 
-## PATCH /api/v1/applications/{id} — Update Status
+## PATCH /api/v1/applications/{id} - Update Status
 
 Move a candidate to a different stage in the hiring pipeline. This is the primary way to sync your external ATS decisions back to NLnest.
 
@@ -197,11 +197,11 @@ curl -X PATCH https://nlnest.com/api/v1/applications/9341 \
 }
 ```
 
-> **Webhook tip**: Configure the `application.status_changed` webhook event to receive real-time notifications whenever a status changes — either via API or from within the NLnest dashboard. See [webhooks.md](webhooks.md).
+> **Webhook tip**: Configure the `application.status_changed` webhook event to receive real-time notifications whenever a status changes - either via API or from within the NLnest dashboard. See [webhooks.md](webhooks.md).
 
 ---
 
-## GET /api/v1/applications/{id}/cv — Download CV
+## GET /api/v1/applications/{id}/cv - Download CV
 
 Returns the candidate's CV file. The response is the raw file with the appropriate `Content-Type` header (`application/pdf`, `application/msword`, etc.).
 
@@ -240,5 +240,5 @@ The `source` field indicates how the candidate discovered the job:
 ## See Also
 
 - [Jobs →](jobs.md)
-- [Webhooks — application events →](webhooks.md)
+- [Webhooks - application events →](webhooks.md)
 - [Analytics →](analytics.md)
